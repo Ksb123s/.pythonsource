@@ -1,0 +1,6 @@
+/photo/ : 전체리스트
+/photo/1 :상세조회 
+/photo/new :생성 
+/photo/ : 
+/photo/ : 
+/photo/ : 
