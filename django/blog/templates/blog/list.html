@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+  <div class="container px-4 px-lg-5">
+    <div class="row gx-4 gx-lg-5 justify-content-center">
+      <div class="col-md-10 col-lg-8 col-xl-7">
+        <!-- Post preview-->
+        {% for post in post_list %}
+          <div class="post-preview">
+            <a href="{% url "blog:detail" post_id=post.id%}">
+              <h2 class="post-title">{{post.title}}</h2>
+              <h3 class="post-subtitle">{{post.content|truncatechars:100}}</h3>
+            </a>
+            <p class="post-meta">
+              Posted by :
+              <a href="#!">{{post.user}}</a>
+              {{post.created_at}}
+            </p>
+          </div>
+          <!-- Divider-->
+          <hr class="my-4"/>
+          <!-- Post preview-->
+        {% endfor %}
+        <!-- Pager-->
+        <div class="d-flex justify-content-center mb-4">
+          <a class="btn btn-primary text-uppercase" href="#!">← Previous Posts
+          </a>
+          <a class="btn btn-primary text-uppercase" href="#!">1/5
+          </a>
+          <a class="btn btn-primary text-uppercase" href="#!">Next Posts →</a>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+{% endblock content %}

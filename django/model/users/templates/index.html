@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+  </head>
+
+  <body>
+    <h1>index</h1>
+    <ul>
+      {% if not user.is_authenticated %}
+        <li>
+          {% comment %} <a href="{% url "register" %}">회원가입</a> {% endcomment %}
+        </li>
+        <li>
+          <a href="{% url "login" %}">로그인</a>
+        </li>
+      {% endif %}
+      <li>
+        <a href="{% url "logout" %}">로그아웃</a>
+      </li>
+    </ul>
+  </body>
+
+</html>
